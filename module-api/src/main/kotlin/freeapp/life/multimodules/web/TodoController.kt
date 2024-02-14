@@ -1,11 +1,23 @@
 package freeapp.life.multimodules.web
 
+import freeapp.life.multimodules.service.TodoService
+import mu.KotlinLogging
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RestController
 
-//@Restcontroller
+
+@RestController
 class TodoController(
-
+    private val todoService: TodoService
 ) {
 
-    //private val log = kotlinlo
+    private val log = KotlinLogging.logger { }
+
+    @GetMapping("/todos")
+    fun findTodos(): MutableList<Any?> {
+
+        return todoService.findTodos()
+    }
+
 
 }

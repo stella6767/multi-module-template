@@ -1,4 +1,4 @@
-package freeapp.life.multimodules.domain.type
+package freeapp.life.multimodules.entity.type
 
 import com.fasterxml.jackson.annotation.JsonCreator
 

@@ -1,6 +1,6 @@
-package freeapp.life.multimodules.domain
+package freeapp.life.multimodules.entity
 
-import freeapp.life.multimodules.domain.type.SignType
+import freeapp.life.multimodules.entity.type.SignType
 import jakarta.persistence.*
 
 @Entity

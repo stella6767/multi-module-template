@@ -6,7 +6,7 @@ plugins {
 }
 
 dependencies {
-
+    //compileOnly(project(":module-domain"))
 }
 
 tasks.test {

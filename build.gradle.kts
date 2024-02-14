@@ -47,10 +47,9 @@ subprojects {
 	dependencies {
 
 		implementation("org.springframework.boot:spring-boot-starter-actuator")
-		implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 		implementation("org.springframework.boot:spring-boot-starter-aop")
-
 		implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
 		implementation("org.jetbrains.kotlin:kotlin-reflect")
 
 		//json 직렬화
@@ -60,12 +59,10 @@ subprojects {
 		implementation("com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.15.2")
 		implementation("com.fasterxml.jackson.core:jackson-databind")
 
-
 		implementation("io.github.microutils:kotlin-logging:3.0.4")
-
-
 		annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 		testImplementation("org.springframework.boot:spring-boot-starter-test")
+
 
 	}
 
@@ -94,7 +91,7 @@ subprojects {
 
 }
 
-project(":module-core") {
+project(":module-storage") {
 	val jar: Jar by tasks
 	val bootJar: BootJar by tasks
 

@@ -4,7 +4,6 @@ plugins {
     kotlin("kapt")
 }
 
-
 configurations {
     runtimeOnly {
         exclude(group = "commons-logging", module = "commons-logging")
@@ -20,8 +19,7 @@ allOpen {
 
 dependencies {
 
-
-    implementation(project(":module-core"))
+    implementation(project(":module-domain"))
     runtimeOnly(project(":module-storage"))
 
     implementation("org.springframework.boot:spring-boot-starter-validation")

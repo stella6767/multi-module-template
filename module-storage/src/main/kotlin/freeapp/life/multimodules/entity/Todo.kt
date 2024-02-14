@@ -1,4 +1,4 @@
-package freeapp.life.multimodules.domain
+package freeapp.life.multimodules.entity
 
 import jakarta.persistence.*
 

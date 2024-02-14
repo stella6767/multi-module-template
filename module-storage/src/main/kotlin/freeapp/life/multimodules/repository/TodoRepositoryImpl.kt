@@ -3,25 +3,21 @@ package freeapp.life.multimodules.repository
 import com.linecorp.kotlinjdsl.dsl.jpql.jpql
 import com.linecorp.kotlinjdsl.render.jpql.JpqlRenderContext
 import com.linecorp.kotlinjdsl.render.jpql.JpqlRenderer
-import freeapp.life.multimodules.domain.Todo
+import freeapp.life.multimodules.entity.Todo
+import freeapp.life.multimodules.repo.TodoRepository
 import jakarta.persistence.EntityManager
-import org.springframework.data.jpa.repository.JpaRepository
-
-interface TodoRepository: JpaRepository<Todo, Long> {
-
-}
+import org.springframework.stereotype.Repository
 
 
-interface TodoCustomRepository
 
-
-class TodoCustomRepositoryImpl(
+@Repository
+class TodoRepositoryImpl(
     private val em: EntityManager,
     private val renderer: JpqlRenderer,
     private val ctx: JpqlRenderContext
-) : TodoCustomRepository {
+) : TodoRepository {
 
-    fun findTodos() {
+    override fun findTodos(): MutableList<Any?> {
 
         val query = jpql {
             select<Todo>(
@@ -40,7 +36,7 @@ class TodoCustomRepositoryImpl(
             }
         }
 
-        jpaQuery.resultList
+        return jpaQuery.resultList
     }
 
 }
