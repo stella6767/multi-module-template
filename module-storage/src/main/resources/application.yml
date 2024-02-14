@@ -1,0 +1,29 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/todo?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 1234
+    hikari:
+      maximum-pool-size: 2
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+    hibernate:
+      storage_engine: innodb
+      jdbc.time_zone: UTC
+      ddl-auto: create
+      naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
+      dialect: org.hibernate.dialect.MySQLDialect
+    properties:
+      hibernate.default_batch_fetch_size: 1000
+      hibernate:
+        globally_quoted_identifiers: true #DB 예약어도 가능
+
+
+#decorator:
+#  datasource:
+#    p6spy:
+#      enable-logging: true
