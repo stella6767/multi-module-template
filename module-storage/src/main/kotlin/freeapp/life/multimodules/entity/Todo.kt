@@ -7,7 +7,7 @@ import jakarta.persistence.*
 class Todo(
     content:String,
     status:Boolean = false,
-    user: User,
+    //user: User,
 ) : BaseEntity() {
 
 
@@ -18,9 +18,9 @@ class Todo(
     var status: Boolean = status
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    val user = user
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "user_id")
+//    val user = user
 
 
 }

@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.ir.backend.js.compile
 
 plugins {
     id("java")
@@ -19,8 +20,7 @@ allOpen {
 
 dependencies {
 
-    implementation(project(":module-domain"))
-    runtimeOnly(project(":module-storage"))
+    api(project(":module-storage"))
 
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")

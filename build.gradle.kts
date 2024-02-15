@@ -6,6 +6,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.4"
 
 	kotlin("jvm") version "1.9.22"
+	kotlin("kapt") version "1.8.22"
 	kotlin("plugin.spring") version "1.9.22" apply false
 	kotlin("plugin.jpa") version "1.9.22" apply false
 }
@@ -39,6 +40,8 @@ subprojects {
 	apply(plugin = "io.spring.dependency-management")
 	apply(plugin = "org.springframework.boot")
 	apply(plugin = "org.jetbrains.kotlin.plugin.spring")
+	apply(plugin = "org.jetbrains.kotlin.kapt")
+	apply(plugin = "org.jetbrains.kotlin.jvm")
 
 	apply(plugin = "kotlin")
 	apply(plugin = "kotlin-spring")
@@ -62,6 +65,7 @@ subprojects {
 		implementation("io.github.microutils:kotlin-logging:3.0.4")
 		annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 		testImplementation("org.springframework.boot:spring-boot-starter-test")
+		kapt("org.springframework.boot:spring-boot-configuration-processor")
 
 
 	}

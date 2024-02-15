@@ -4,18 +4,23 @@ import com.linecorp.kotlinjdsl.dsl.jpql.jpql
 import com.linecorp.kotlinjdsl.render.jpql.JpqlRenderContext
 import com.linecorp.kotlinjdsl.render.jpql.JpqlRenderer
 import freeapp.life.multimodules.entity.Todo
-import freeapp.life.multimodules.repo.TodoRepository
+
 import jakarta.persistence.EntityManager
-import org.springframework.stereotype.Repository
+import org.springframework.data.jpa.repository.JpaRepository
 
 
+interface TodoRepository : JpaRepository<Todo, Long>, TodoCustomRepository
 
-@Repository
-class TodoRepositoryImpl(
+
+interface TodoCustomRepository {
+    fun findTodos(): MutableList<Any?>
+}
+
+class TodoCustomRepositoryImpl (
     private val em: EntityManager,
     private val renderer: JpqlRenderer,
     private val ctx: JpqlRenderContext
-) : TodoRepository {
+) : TodoCustomRepository {
 
     override fun findTodos(): MutableList<Any?> {
 

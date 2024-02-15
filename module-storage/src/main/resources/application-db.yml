@@ -18,7 +18,7 @@ spring:
     hibernate:
       storage_engine: innodb
       jdbc.time_zone: UTC
-      ddl-auto: update
+      ddl-auto: create-drop
       naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
       dialect: org.hibernate.dialect.MySQLDialect
     properties:

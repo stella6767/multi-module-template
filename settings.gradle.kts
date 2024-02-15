@@ -1,6 +1,6 @@
 rootProject.name = "multi-modules"
 
-include(":module-domain")
+//include(":module-domain")
 include(":module-api")
 include(":module-batch")
 include(":module-admin-api")

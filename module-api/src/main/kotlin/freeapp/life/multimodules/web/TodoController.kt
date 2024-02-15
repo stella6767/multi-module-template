@@ -1,6 +1,8 @@
 package freeapp.life.multimodules.web
 
+
 import freeapp.life.multimodules.service.TodoService
+import jakarta.annotation.PostConstruct
 import mu.KotlinLogging
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
@@ -12,6 +14,7 @@ class TodoController(
 ) {
 
     private val log = KotlinLogging.logger { }
+
 
     @GetMapping("/todos")
     fun findTodos(): MutableList<Any?> {
