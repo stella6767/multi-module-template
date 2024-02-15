@@ -1,6 +1,7 @@
 package freeapp.life.multimodules.web
 
 
+import freeapp.life.multimodules.entity.Todo
 import freeapp.life.multimodules.service.TodoService
 import jakarta.annotation.PostConstruct
 import mu.KotlinLogging
@@ -17,7 +18,7 @@ class TodoController(
 
 
     @GetMapping("/todos")
-    fun findTodos(): MutableList<Any?> {
+    fun findTodos(): MutableList<Todo> {
 
         return todoService.findTodos()
     }

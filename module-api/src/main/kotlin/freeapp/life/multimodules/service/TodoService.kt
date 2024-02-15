@@ -13,21 +13,21 @@ class TodoService(
 
     @PostConstruct
     fun saveTodos() {
-        val todo1 = Todo(
-            content = "test1",
-            status = false
-        )
-
-        val todo2 = Todo(
-            content = "test1",
-            status = false
-        )
-
-        todoRepository.saveAll(listOf(todo1, todo2))
+//        val todo1 = Todo(
+//            content = "test1",
+//            status = false
+//        )
+//
+//        val todo2 = Todo(
+//            content = "test1",
+//            status = false
+//        )
+//
+//        todoRepository.saveAll(listOf(todo1, todo2))
 
     }
 
-    fun findTodos(): MutableList<Any?> {
+    fun findTodos(): MutableList<Todo> {
         return todoRepository.findTodos()
     }
 

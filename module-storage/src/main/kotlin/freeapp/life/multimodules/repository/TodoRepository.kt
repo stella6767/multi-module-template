@@ -13,7 +13,7 @@ interface TodoRepository : JpaRepository<Todo, Long>, TodoCustomRepository
 
 
 interface TodoCustomRepository {
-    fun findTodos(): MutableList<Any?>
+    fun findTodos(): MutableList<Todo>
 }
 
 class TodoCustomRepositoryImpl (
@@ -22,7 +22,7 @@ class TodoCustomRepositoryImpl (
     private val ctx: JpqlRenderContext
 ) : TodoCustomRepository {
 
-    override fun findTodos(): MutableList<Any?> {
+    override fun findTodos(): MutableList<Todo> {
 
         val query = jpql {
             select<Todo>(
@@ -35,7 +35,7 @@ class TodoCustomRepositoryImpl (
         val render =
             renderer.render(query = query, ctx)
 
-        val jpaQuery = em.createQuery(render.query).apply {
+        val jpaQuery = em.createQuery(render.query, Todo::class.java).apply {
             render.params.forEach { name, value ->
                 setParameter(name, value)
             }
