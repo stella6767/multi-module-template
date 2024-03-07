@@ -40,6 +40,9 @@ management:
       exposure:
         include: "*"
 
+logging:
+  config: classpath:logback-spring.xml
+
 ---
 
 
