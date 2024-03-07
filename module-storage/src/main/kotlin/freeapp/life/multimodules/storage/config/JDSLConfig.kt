@@ -1,4 +1,4 @@
-package freeapp.life.multimodules.config
+package freeapp.life.multimodules.storage.config
 
 import com.linecorp.kotlinjdsl.render.jpql.JpqlRenderContext
 import com.linecorp.kotlinjdsl.render.jpql.JpqlRenderer

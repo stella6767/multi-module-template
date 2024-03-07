@@ -1,12 +1,12 @@
-package freeapp.life.multimodules.entity.type
+package freeapp.life.multimodules.storage.entity.type
 
 import com.fasterxml.jackson.annotation.JsonCreator
 
 enum class SignType(
     val clientName: String
 ) {
-    //CommonOAuth2Provider
 
+    //CommonOAuth2Provider
     FACEBOOK("Facebook"),
     GOOGLE("Google"),
     GITHUB("GitHub"),

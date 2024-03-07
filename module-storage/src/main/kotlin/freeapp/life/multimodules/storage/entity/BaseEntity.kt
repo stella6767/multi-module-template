@@ -1,4 +1,4 @@
-package freeapp.life.multimodules.entity
+package freeapp.life.multimodules.storage.entity
 
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate

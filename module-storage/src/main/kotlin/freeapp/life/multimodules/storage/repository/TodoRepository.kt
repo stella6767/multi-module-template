@@ -1,9 +1,9 @@
-package freeapp.life.multimodules.repository
+package freeapp.life.multimodules.storage.repository
 
 import com.linecorp.kotlinjdsl.dsl.jpql.jpql
 import com.linecorp.kotlinjdsl.render.jpql.JpqlRenderContext
 import com.linecorp.kotlinjdsl.render.jpql.JpqlRenderer
-import freeapp.life.multimodules.entity.Todo
+import freeapp.life.multimodules.storage.entity.Todo
 
 import jakarta.persistence.EntityManager
 import org.springframework.data.jpa.repository.JpaRepository

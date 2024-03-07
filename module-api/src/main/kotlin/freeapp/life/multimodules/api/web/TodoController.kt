@@ -1,9 +1,9 @@
-package freeapp.life.multimodules.web
+package freeapp.life.multimodules.api.web
 
 
-import freeapp.life.multimodules.entity.Todo
-import freeapp.life.multimodules.service.TodoService
-import jakarta.annotation.PostConstruct
+
+import freeapp.life.multimodules.api.service.TodoService
+import freeapp.life.multimodules.storage.entity.Todo
 import mu.KotlinLogging
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController

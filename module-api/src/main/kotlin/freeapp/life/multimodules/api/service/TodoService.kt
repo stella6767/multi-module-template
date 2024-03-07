@@ -1,7 +1,8 @@
-package freeapp.life.multimodules.service
+package freeapp.life.multimodules.api.service
 
-import freeapp.life.multimodules.entity.Todo
-import freeapp.life.multimodules.repository.TodoRepository
+
+import freeapp.life.multimodules.storage.entity.Todo
+import freeapp.life.multimodules.storage.repository.TodoRepository
 import jakarta.annotation.PostConstruct
 import org.springframework.stereotype.Service
 

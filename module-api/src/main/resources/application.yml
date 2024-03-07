@@ -1,11 +1,55 @@
 
 server:
-  tomcat:
-    max-swallow-size: 500MB
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
+      enabled: true
   port: 8082
-  # shutdown: "graceful"
+  shutdown: "graceful"
 
 spring:
-  profiles:
-    include: db
+  config:
+    import:
+      - optional:configserver:https://config.freeapp.life
 
+  profiles:
+    active: local
+  cloud:
+    refresh:
+      extra-refreshable: com.zaxxer.hikari.HikariDataSource
+    config:
+      name: freeapp
+  application:
+    name: example-api
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    tags:
+      application: example-app
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+
+
+spring:
+  cloud:
+    config:
+      enabled: false
+  config:
+    activate:
+      on-profile:
+        - local
+    import:
+      - storage.yml

@@ -1,14 +1,16 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
+
 plugins {
 	id("org.springframework.boot") version "3.2.2"
 	id("io.spring.dependency-management") version "1.1.4"
 
 	kotlin("jvm") version "1.9.22"
-	kotlin("kapt") version "1.8.22"
+	kotlin("kapt") version "1.9.22"
 	kotlin("plugin.spring") version "1.9.22" apply false
 	kotlin("plugin.jpa") version "1.9.22" apply false
+	kotlin("plugin.allopen") version "1.9.22" apply false
 }
 
 group = "freeapp.life"
@@ -40,8 +42,6 @@ subprojects {
 	apply(plugin = "io.spring.dependency-management")
 	apply(plugin = "org.springframework.boot")
 	apply(plugin = "org.jetbrains.kotlin.plugin.spring")
-	apply(plugin = "org.jetbrains.kotlin.kapt")
-	apply(plugin = "org.jetbrains.kotlin.jvm")
 
 	apply(plugin = "kotlin")
 	apply(plugin = "kotlin-spring")
@@ -50,9 +50,6 @@ subprojects {
 	dependencies {
 
 		implementation("org.springframework.boot:spring-boot-starter-actuator")
-		implementation("org.springframework.boot:spring-boot-starter-aop")
-		implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-
 		implementation("org.jetbrains.kotlin:kotlin-reflect")
 
 		//json 직렬화
@@ -65,8 +62,6 @@ subprojects {
 		implementation("io.github.microutils:kotlin-logging:3.0.4")
 		annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 		testImplementation("org.springframework.boot:spring-boot-starter-test")
-		kapt("org.springframework.boot:spring-boot-configuration-processor")
-
 
 	}
 

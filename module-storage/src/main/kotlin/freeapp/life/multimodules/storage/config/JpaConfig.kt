@@ -1,4 +1,4 @@
-package freeapp.life.multimodules.config
+package freeapp.life.multimodules.storage.config
 
 import org.springframework.boot.autoconfigure.domain.EntityScan
 import org.springframework.context.annotation.Configuration
